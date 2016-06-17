@@ -1,0 +1,32 @@
+{
+  "name": "codestar",
+  "version": "1.0.0",
+  "description": "frontend app that lets a user to enter two people's github ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alamuv/CodeStar.git"
+  },
+  "keywords": [
+    "github",
+    "stars"
+  ],
+  "author": "Alamu Palaniappan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alamuv/CodeStar/issues"
+  },
+  "homepage": "https://github.com/alamuv/CodeStar#readme",
+  "dependencies": {
+    "backbone": "^1.3.3",
+    "chai": "^3.5.0",
+    "jquery": "^3.0.0",
+    "mocha": "^2.5.3",
+    "sinon": "^1.17.4",
+    "sinon-chai": "^2.8.0",
+    "underscore": "^1.8.3"
+  }
+}
