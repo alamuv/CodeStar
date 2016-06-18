@@ -21,7 +21,6 @@ CodeStars.Views.InputView = Backbone.View.extend({
   },
 
   render: function() {
-    console.log('in InputView render', this.$el.html(this.template))
    return this.$el.html(this.template);
   },
 
@@ -29,19 +28,19 @@ CodeStars.Views.InputView = Backbone.View.extend({
   getRepos: function(event) {
     event.preventDefault();
     var githubHandle = $('[id="handle"]').val();
-    console.log(githubHandle);
+    // console.log(githubHandle);
 
     var repos = new CodeStars.Collections.Repos({user: githubHandle});
     // var reposView = new CodeStars.Views.ReposListView({collection: repos})
-    repos.fetch({success: this.renderRepos.bind(this), error: this.handleError.bind(this)});
+    repos.fetch({success: repos.displayRepos.bind(this), error: this.handleError.bind(this)});
     // event.value();
     // alert('submit');
     this.resetInput();
   },
 
-  renderRepos: function(repos) {
-    console.log(repos);
-  },
+  // renderRepos: function(repos) {
+  //   console.log(repos);
+  // },
 
   handleError: function(err, textStatus) {
     console.log(textStatus);

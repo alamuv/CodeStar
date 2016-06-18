@@ -10,10 +10,11 @@ CodeStars.Views.ReposListView = Backbone.View.extend({
   },
 
   render: function() {
+    console.log('in reposList render')
     this.$el.children().detach();
 
-    return this.$el.addClass('photoList').html('<h3>List of Photos</h3>').append(this.collection.map(function(photo) {
-      return new PhotoListEntryView({ model: photo }).render();
+    return this.$el.addClass('reposList').html('<h3>List of Repositories</h3>').append(this.collection.map(function(repo) {
+      return new RepoView({ model: Repo }).render();
     }));
   }
 

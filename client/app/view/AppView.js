@@ -11,7 +11,6 @@ CodeStars.Views.AppView = Backbone.View.extend({
   },
 
   render: function(){
-    console.log(this.user1.$el)
     // this.$el.html("This is my home page!!");       
     //     return this;
    //  var row = $('<div class="row container"></div>').append([this.photosListView.$el, this.photoDisplayView.$el]);

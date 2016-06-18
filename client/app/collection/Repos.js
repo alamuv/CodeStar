@@ -1,5 +1,7 @@
 CodeStars.Collections.Repos = Backbone.Collection.extend({
 
+    model: Repo,
+
     initialize: function(options) {
         if (options.user)
             this.user = options.user;
@@ -10,11 +12,13 @@ CodeStars.Collections.Repos = Backbone.Collection.extend({
     },
 
     parse: function(response) {
-        if(response)
         return response;
     },
 
-    // displayRepos: function(repos) {
-
-    // }
+    displayRepos: function(repos) {
+        console.log(repos.models);
+        var repositories = repos.models;
+        var repos = new CodeStars.Collections.Repos({repositories});
+        repos.add(repositories);
+    }
 });
