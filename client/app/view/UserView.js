@@ -1,8 +1,6 @@
 CodeStars.Views.UserView = Backbone.View.extend({
   // model: User, 
   className: 'col-md-6 user',
-  // tagName: 'div',
-  // template: '<input type="text" placeholder="type in url"></input><input type="submit" id="submit">Submit</input>',
   template: '<div class="submitUser">'+
   '<form class="form-inline">'+
   '<div class="form-group">' +
@@ -24,7 +22,8 @@ CodeStars.Views.UserView = Backbone.View.extend({
     this.on('submit', this.getRepos, this);
   },
 
-  //upon submission of github username, get repos for that user
+  //upon submission of github username, get repos for that user, 
+  //pass the github handle to the Repos collection, where we set github API
   getRepos: function(event) {
     event.preventDefault();
     var githubHandle = this.$el.find('input').val();
