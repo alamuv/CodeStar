@@ -1,23 +1,59 @@
 CodeStars.Views.UserView = Backbone.View.extend({
-  //model is user
-  
-  className: 'user',
+  // model: User, 
+  className: 'col-md-6 user',
+  // tagName: 'div',
+  // template: '<input type="text" placeholder="type in url"></input><input type="submit" id="submit">Submit</input>',
+  template: '<div class="submitUser">'+
+  '<form class="form-inline">'+
+  '<div class="form-group">' +
+    '<label for="user">Github Username</label>' +
+    '<input type="text" class="form-control" id="handle" placeholder="Type in Github UserHandle Here">' +
+  '</div>' +
+  '<button type="submit" class="btn btn-default">Submit</button>' +
+  '</form>' +
+  '</div>' + 
+  '<div class="reposList">' +
+  '</div>',
 
-  initialize: function() {
-    this.input = new CodeStars.Views.InputView();
-    this.reposList = new CodeStars.Views.ReposListView({});
-    this.render();
+  events: {
+    'submit': 'getRepos'
   },
 
-  render: function(){
+  initialize: function() {
+    this.render();
+    this.on('submit', this.getRepos, this);
+  },
 
-    return this.$el.html([
-      this.user1.$el
-      // this.reposList.$el
-    ]);
-    // var listEntry = this.template({ title: this.model.get('title')});
-    // // this.$el.text('I am a picture please click on me');
-    // // return this.$el;
-    // return this.$el.html(listEntry);
-  }
-})
+  //upon submission of github username, get repos for that user
+  getRepos: function(event) {
+    event.preventDefault();
+    var githubHandle = this.$el.find('input').val();
+
+    var repos = new CodeStars.Collections.Repos({user: githubHandle});
+    repos.fetch({success: this.displayRepos.bind(this), error: this.handleError.bind(this)});
+    this.resetInput();
+  },
+
+  displayRepos: function(repos) {
+    console.log(repos);
+    var repositories = repos.models;
+    var repos = new CodeStars.Collections.Repos(repositories);
+    var reposView = new CodeStars.Views.ReposListView({collection: repos});
+    this.$el.find('.reposList').children().detach();
+    this.$el.find('.reposList').append(reposView.render());
+  },
+
+  handleError: function(err, textStatus) {
+    console.log(textStatus);
+    alert(textStatus.status + ' ' + textStatus.statusText);
+  },
+
+  resetInput: function() {
+    $('[id="handle"]').val("");
+    $('#handle').attr({placeholder: 'Type in Github UserHandle Here'});
+  },
+
+  render: function() {
+   return this.$el.html(this.template);
+  },
+});
