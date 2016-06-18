@@ -1,8 +1,8 @@
 CodeStars.Views.AppView = Backbone.View.extend({
 
   initialize: function(params) {
-    this.user1 = new CodeStars.Views.UserView();
-    this.user2 = new CodeStars.Views.UserView();
+    this.user1 = new CodeStars.Views.UserView({model: User});
+    this.user2 = new CodeStars.Views.UserView({model: User});
   
   //   this.model.on('change:currentPhoto', function(model) {
   //     // console.log('change current photo in app view');
