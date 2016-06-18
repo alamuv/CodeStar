@@ -1,4 +1,4 @@
-var PhotoListEntryView = Backbone.View.extend({
+CodeStars.Views.PhotoListEntryView = Backbone.View.extend({
   //model is photo
   className: 'photoEntry',
   tagName: 'li',

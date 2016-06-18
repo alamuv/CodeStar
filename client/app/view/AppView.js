@@ -1,5 +1,4 @@
-var AppView = Backbone.View.extend({
-
+CodeStars.Views.AppView = Backbone.View.extend({
 
   initialize: function(params) {
   //   this.inputView = new InputView({collection: this.model.get('photos')});
@@ -9,9 +8,11 @@ var AppView = Backbone.View.extend({
   //   this.model.on('change:currentPhoto', function(model) {
   //     // console.log('change current photo in app view');
   //     this.photoDisplayView.displayPhoto(model.get('currentPhoto')) }, this);
-  // },
+  },
 
-  render: function() {
+  render: function(){
+    this.$el.html("This is my home page!!");       
+        return this;
    //  var row = $('<div class="row container"></div>').append([this.photosListView.$el, this.photoDisplayView.$el]);
    // return this.$el.html([
    //    this.inputView.$el,

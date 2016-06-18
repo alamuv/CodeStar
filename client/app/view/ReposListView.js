@@ -1,4 +1,4 @@
-var ReposListView = Backbone.View.extend({
+CodeStars.Views.ReposListView = Backbone.View.extend({
 
   tagName: 'ul',
   className: 'col-md-6',

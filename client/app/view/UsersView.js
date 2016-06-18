@@ -1,4 +1,4 @@
-var UsersListView = Backbone.View.extend({
+CodeStars.Views.UsersListView = Backbone.View.extend({
 
   tagName: 'ul',
   className: 'col-md-6',

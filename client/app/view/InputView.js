@@ -1,7 +1,7 @@
-var InputView = Backbone.View.extend({
+CodeStars.Views.InputView = Backbone.View.extend({
   // collection: Repos, 
   className: 'submitUser',
-  tagName: 'div',
+  // tagName: 'div',
   template: '<form class="form-inline">'+
   '<div class="form-group">' +
     '<label for="user">Github Username</label>' +

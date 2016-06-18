@@ -1,4 +1,4 @@
-var UserView = Backbone.View.extend({
+CodeStars.Views.UserView = Backbone.View.extend({
   //model is photo
   
   className: 'user',

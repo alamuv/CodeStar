@@ -5,10 +5,10 @@ var CodeStars = {
     Collections: {}
 }
 
-// var app = app || {};
 $(function() {
   'use strict';
 
   // kick things off by creating the `App`
-  new CodeStars.AppView();
+  var app = new CodeStars.Views.AppView();
+  $('#app').html(app.render().el);
 });
