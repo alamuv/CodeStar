@@ -3,7 +3,7 @@ var CodeStars = {
     Views: {},
     Models: {},
     Collections: {},
-    githubApiUrl: 'https://api.github.com/'
+    githubApiUrl: 'https://api.github.com/search/repositories?q=user:'
 }
 
 $(function() {

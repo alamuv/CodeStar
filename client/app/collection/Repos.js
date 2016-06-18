@@ -8,12 +8,12 @@ CodeStars.Collections.Repos = Backbone.Collection.extend({
     },
 
     url: function() {
-        return CodeStars.githubApiUrl+'users/'+this.user+'/repos';
+        return CodeStars.githubApiUrl+this.user+'&sort=stars&order=desc';
     },
 
     parse: function(response) {
         console.log(response)
-        return response;
+        return response.items;
     },
 
 });

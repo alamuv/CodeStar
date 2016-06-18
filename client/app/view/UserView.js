@@ -28,19 +28,18 @@ CodeStars.Views.UserView = Backbone.View.extend({
   getRepos: function(event) {
     event.preventDefault();
     var githubHandle = this.$el.find('input').val();
-
+    console.log(githubHandle)
     var repos = new CodeStars.Collections.Repos({user: githubHandle});
     repos.fetch({success: this.displayRepos.bind(this), error: this.handleError.bind(this)});
     this.resetInput();
   },
 
   displayRepos: function(repos) {
-    console.log(repos);
-    var repositories = repos.models;
-    var repos = new CodeStars.Collections.Repos(repositories);
+    console.log(repos)
+    var user = repos.user;
     var reposView = new CodeStars.Views.ReposListView({collection: repos});
     this.$el.find('.reposList').children().detach();
-    this.$el.find('.reposList').append(reposView.render());
+    this.$el.find('.reposList').html('<h3>'+ user +' - List of Repositories</h3>').append(reposView.render());
   },
 
   handleError: function(err, textStatus) {
