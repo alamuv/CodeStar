@@ -9,6 +9,8 @@ CodeStars.Views.RepoView = Backbone.View.extend({
   //   }
   // },
 
+  
+
   render: function(){
     // console.log(this.model.get('name'));
     var listEntry = this.template({ name: this.model.get('name'), starCount: this.model.get('stargazers_count')});
