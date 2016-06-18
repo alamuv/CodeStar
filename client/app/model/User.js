@@ -1,7 +1,8 @@
-var User = Backbone.Model.extend({
+CodeStars.Models.User = Backbone.Model.extend({
   defaults: {
     totalStars: 0,
     name: '',
+    repos: [],
     url: ''
   },
 
