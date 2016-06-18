@@ -1,22 +1,19 @@
 var InputView = Backbone.View.extend({
-  // collection: Users,
-  // tagName: '<div>',
-  className: 'submitPhoto',
+  // collection: Repos, 
+  className: 'submitUser',
+  tagName: 'div',
   template: '<form class="form-inline">'+
   '<div class="form-group">' +
-    '<label for="imageURL">Image URL</label>' +
-    '<input type="text" class="form-control" id="imageURL" placeholder="Type in Image URL Here">' +
-  '</div>' +
-  '<div class="form-group">' +
-    '<label for="imageTitle">Image Title</label>' +
-    '<input type="text" class="form-control" id="imageTitle" placeholder="Type in Image Title Here">' +
+    '<label for="user">Github Username</label>' +
+    '<input type="text" class="form-control" id="handle" placeholder="Type in Github UserHandle Here">' +
   '</div>' +
   '<button type="submit" class="btn btn-default">Submit</button>' +
   '</form>',
-  // template: '<input type="text" placeholder="type in url"></input><input type="submit" id="submit">Submit</input>',
+
   events: {
     'submit': 'handleSubmit'
-    },
+  },
+
   initialize: function() {
     this.render();
     this.on('submit', this.handleSubmit, this);
