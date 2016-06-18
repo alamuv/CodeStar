@@ -1,7 +1,8 @@
 CodeStars.Views.AppView = Backbone.View.extend({
 
   initialize: function(params) {
-    this.user1 = new CodeStars.Views.InputView();
+    this.user1 = new CodeStars.Views.UsersView();
+    this.user2 = new CodeStars.Views.UsersView();
   //   this.photosListView = new PhotoListView({ collection: this.model.get('photos') });
   //   this.photoDisplayView = new PhotoDisplayView({ model: this.model.get('currentPhoto') });
 
@@ -15,7 +16,8 @@ CodeStars.Views.AppView = Backbone.View.extend({
     //     return this;
    //  var row = $('<div class="row container"></div>').append([this.photosListView.$el, this.photoDisplayView.$el]);
    return this.$el.html([
-      this.user1.$el
+      this.user1.$el,
+      this.user2.$el
       // row
       // this.photosListView.$el,
       // this.photoDisplayView.$el

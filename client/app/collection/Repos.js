@@ -12,6 +12,7 @@ CodeStars.Collections.Repos = Backbone.Collection.extend({
     },
 
     parse: function(response) {
+        console.log(response)
         return response;
     },
 
