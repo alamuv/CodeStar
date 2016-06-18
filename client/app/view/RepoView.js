@@ -1,4 +1,4 @@
-CodeStars.Views.PhotoListEntryView = Backbone.View.extend({
+CodeStars.Views.RepoView = Backbone.View.extend({
   //model is photo
   className: 'repo',
   tagName: 'li',
@@ -10,6 +10,7 @@ CodeStars.Views.PhotoListEntryView = Backbone.View.extend({
   // },
 
   render: function(){
+    console.log(this.model.get('name'));
     var listEntry = this.template({ name: this.model.get('name')});
     // this.$el.text('I am a picture please click on me');
     // return this.$el;

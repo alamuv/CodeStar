@@ -15,10 +15,10 @@ CodeStars.Collections.Repos = Backbone.Collection.extend({
         return response;
     },
 
-    displayRepos: function(repos) {
-        console.log(repos.models);
-        var repositories = repos.models;
-        var repos = new CodeStars.Collections.Repos({repositories});
-        repos.add(repositories);
-    }
+    // displayRepos: function(repos) {
+    //     console.log(repos.models);
+    //     var repositories = repos.models;
+    //     var repos = new CodeStars.Collections.Repos({repositories});
+    //     repos.add(repositories);
+    // }
 });

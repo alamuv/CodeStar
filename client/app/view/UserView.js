@@ -1,26 +1,20 @@
 CodeStars.Views.UserView = Backbone.View.extend({
-  //model is photo
+  //model is user
   
   className: 'user',
-  tagName: 'div',
-  template: '<form class="form-inline">'+
-  '<div class="form-group">' +
-    '<label for="user">Github Username</label>' +
-    '<input type="text" class="form-control" id="handle" placeholder="Type in Github UserHandle Here">' +
-  '</div>' +
-  '<button type="submit" class="btn btn-default">Submit</button>' +
-  '</form>',
-
-  events: {
-    'submit': 'handleSubmit'
-  },
 
   initialize: function() {
+    this.input = new CodeStars.Views.InputView();
+    this.reposList = new CodeStars.Views.ReposListView({});
     this.render();
-    this.on('submit', this.handleSubmit, this);
   },
 
   render: function(){
+
+    return this.$el.html([
+      this.user1.$el
+      // this.reposList.$el
+    ]);
     // var listEntry = this.template({ title: this.model.get('title')});
     // // this.$el.text('I am a picture please click on me');
     // // return this.$el;

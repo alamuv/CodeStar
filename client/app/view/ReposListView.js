@@ -4,7 +4,7 @@ CodeStars.Views.ReposListView = Backbone.View.extend({
   className: 'col-md-6',
   
   initialize: function() {
-    this.collection.on('add', this.render, this);
+    // this.collection.on('add', this.render, this);
     this.render();
 
   },
@@ -14,7 +14,8 @@ CodeStars.Views.ReposListView = Backbone.View.extend({
     this.$el.children().detach();
 
     return this.$el.addClass('reposList').html('<h3>List of Repositories</h3>').append(this.collection.map(function(repo) {
-      return new RepoView({ model: Repo }).render();
+      console.log(repo);
+      return new CodeStars.Views.RepoView({ model: repo }).render();
     }));
   }
 

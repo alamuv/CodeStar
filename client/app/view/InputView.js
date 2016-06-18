@@ -32,15 +32,18 @@ CodeStars.Views.InputView = Backbone.View.extend({
 
     var repos = new CodeStars.Collections.Repos({user: githubHandle});
     // var reposView = new CodeStars.Views.ReposListView({collection: repos})
-    repos.fetch({success: repos.displayRepos.bind(this), error: this.handleError.bind(this)});
+    repos.fetch({success: this.displayRepos.bind(this), error: this.handleError.bind(this)});
     // event.value();
     // alert('submit');
     this.resetInput();
   },
 
-  // renderRepos: function(repos) {
-  //   console.log(repos);
-  // },
+  displayRepos: function(repos) {
+    console.log(repos);
+    var repositories = repos.models;
+    var repos = new CodeStars.Collections.Repos(repositories);
+    var reposView = new CodeStars.Views.ReposListView({collection: repos});
+  },
 
   handleError: function(err, textStatus) {
     console.log(textStatus);
