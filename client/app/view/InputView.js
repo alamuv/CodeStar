@@ -11,23 +11,26 @@ CodeStars.Views.InputView = Backbone.View.extend({
   '</form>',
 
   events: {
-    'submit': 'handleSubmit'
+    'submit': 'getRepos'
   },
 
   initialize: function() {
     this.render();
-    this.on('submit', this.handleSubmit, this);
+    this.on('submit', this.getRepos, this);
   },
 
   render: function() {
    return this.$el.html(this.template);
   },
-  //upon submission of image title & url, add to photos collection
-  handleSubmit: function(event) {
+
+  //upon submission of github username, get repos for that user
+  getRepos: function(event) {
     event.preventDefault();
-    var imgTitle = $('[id="imageTitle"]').val();
-    var imgURL = $('[id="imageURL"]').val();
-    // console.log(imgTitle, imgURL);
+    var githubHandle = $('[id="handle"]').val();
+    console.log(githubHandle);
+
+    var repos = new CodeStars.Collections.Repos({user: githubHandle});
+    repos.fetch();
     // event.value();
     // alert('submit');
     this.resetInput();
