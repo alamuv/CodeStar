@@ -1,7 +1,8 @@
 CodeStars.Views.InputView = Backbone.View.extend({
-  // collection: Repos, 
+  // model: User, 
   className: 'submitUser',
   // tagName: 'div',
+  // template: '<input type="text" placeholder="type in url"></input><input type="submit" id="submit">Submit</input>',
   template: '<form class="form-inline">'+
   '<div class="form-group">' +
     '<label for="user">Github Username</label>' +
@@ -20,6 +21,7 @@ CodeStars.Views.InputView = Backbone.View.extend({
   },
 
   render: function() {
+    console.log('in InputView render', this.$el.html(this.template))
    return this.$el.html(this.template);
   },
 
@@ -30,22 +32,24 @@ CodeStars.Views.InputView = Backbone.View.extend({
     console.log(githubHandle);
 
     var repos = new CodeStars.Collections.Repos({user: githubHandle});
-    repos.fetch();
+    // var reposView = new CodeStars.Views.ReposListView({collection: repos})
+    repos.fetch({success: this.renderRepos.bind(this), error: this.handleError.bind(this)});
     // event.value();
     // alert('submit');
     this.resetInput();
-    this.addPhoto(imgURL, imgTitle);
   },
 
-  addPhoto: function(url, title) {
-    // console.log('calling add new photo');
-    // console.log('url :', url, title);
-    this.collection.addNewPhoto(url, title);
+  renderRepos: function(repos) {
+    console.log(repos);
   },
+
+  handleError: function(err, textStatus) {
+    console.log(textStatus);
+    alert(textStatus.status + ' ' + textStatus.statusText);
+  },
+
   resetInput: function() {
-    $('[id="imageURL"]').val("");
-    $('[id="imageTitle"]').val("");
-    $('#imageTitle').attr({placeholder: 'Type in Image URL Here'});
-    $('#imageURL').attr({placeholder: 'Type in Image Title Here'});
+    $('[id="handle"]').val("");
+    $('#handle').attr({placeholder: 'Type in Github UserHandle Here'});
   }
 });

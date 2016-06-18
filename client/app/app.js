@@ -11,5 +11,5 @@ $(function() {
 
   // kick things off by creating the `App`
   var app = new CodeStars.Views.AppView();
-  $('#app').html(app.render().el);
+  $('#app').append(app.render());
 });

@@ -1,0 +1,13 @@
+.submitUser {
+  margin: 0 auto;
+  /*text-align: center;*/
+}
+#handle {
+  padding: 15px;
+  width: 300px;
+  max-width: 100%;
+}
+
+.submitUser label {
+  padding: 15px;
+}
