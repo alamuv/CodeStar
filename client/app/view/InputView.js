@@ -1,5 +1,5 @@
 var InputView = Backbone.View.extend({
-  collection: Users,
+  // collection: Users,
   // tagName: '<div>',
   className: 'submitPhoto',
   template: '<form class="form-inline">'+
