@@ -3,36 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <title>Backbone.js • Code Stars</title>
-
-  <link rel="stylesheet" href=".././node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <script src=".././node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="app/style.css">
 </head>
 <body>
   <h2 class="header"> Github Winner </h2>
+
   <div id="container">
     <div id="app"></div>
   </div>
 
   <!-- Libraries -->
-  <script src=".././node_modules/underscore/underscore.js"></script>
-  <script src=".././node_modules/jquery/dist/jquery.js"></script>
-  <script src=".././node_modules/backbone/backbone.js"></script>
+  <script src="../node_modules/underscore/underscore.js"></script>
+  <script src="../node_modules/jquery/dist/jquery.js"></script>
+  <script src="../node_modules/backbone/backbone.js"></script>
 
   <!-- Models/Collections -->
-  <script src="data.js"></script>
-  <script src="Model/photoModel.js"></script>
-  <script src="collection/photosCollection.js"></script>
-  <script src="Model/appModel.js"></script>
+  <script src="app/model/User.js"></script>
+  <script src="app/model/Repo.js"></script>
+  <script src="app/collection/Users.js"></script>
+  <script src="app/collection/Repos.js"></script>
+  <script src="app/model/AppModel.js"></script>
 
   <!-- Views -->
-  <script src="Views/PhotoListEntryView.js"></script>
-  <script src="Views/PhotoListView.js"></script>
-  <script src="Views/PhotoDisplayView.js"></script>
-  <script src="Views/InputView.js"></script>
-  <script src="Views/AppView.js"></script>
+  <script src="app/view/UserView.js"></script>
+  <script src="app/view/UsersView.js"></script>
+  <script src="app/view/RepoView.js"></script>
+  <script src="app/view/ReposListView.js"></script>
+  <script src="app/view/InputView.js"></script>
+  <script src="app/view/AppView.js"></script>
   <!-- Launch App -->
-  <script src="app.js"></script>  
+  <script src="app/app.js"></script>  
 
 </body>
 </html>
